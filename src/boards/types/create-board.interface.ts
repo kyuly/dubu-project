@@ -1,5 +1,4 @@
-export interface UpdateBoard {
-  idx: number;
+export interface CreateBoard {
   title: string;
   injectTime: Date;
   weight: number;

@@ -1,12 +1,21 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Board {
   @PrimaryGeneratedColumn()
-  no: number;
+  idx: number;
 
   @Column()
   title: string;
+
+  @Column()
+  injectTime: Date;
 
   @Column()
   weight: number;
@@ -18,7 +27,10 @@ export class Board {
   isNeuroticSymptom: boolean;
 
   @Column()
-  kologramPerDose: number;
+  medType: string;
+
+  @Column()
+  kilogramPerDose: number;
 
   @Column()
   useMedBrand: string;
@@ -34,4 +46,10 @@ export class Board {
 
   @Column()
   description: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
